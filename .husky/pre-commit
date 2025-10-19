@@ -1,2 +1,1 @@
-echo "========= Husky is running! ========="
 bunx lint-staged
