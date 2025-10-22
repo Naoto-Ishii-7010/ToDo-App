@@ -6,7 +6,8 @@
 		"useIgnoreFile": false
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["**", "!src/stories_sample/**/*"]
 	},
 	"formatter": {
 		"enabled": true,
