@@ -40,3 +40,7 @@ next-env.d.ts
 storybook-static
 
 /src/generated/prisma
+
+## Panda
+styled-system
+styled-system-studio
