@@ -5,7 +5,7 @@ FROM oven/bun:1
 WORKDIR /app
 
 # 最初に依存関係のファイルのみをコピー
-COPY package*.json ./
+COPY package.json bun.lock* ./
 
 # 依存関係をインストール
 # --frozen-lockfileはlockファイルと完全に一致したバージョンをインストールし、CI/CD環境での再現性を高める
