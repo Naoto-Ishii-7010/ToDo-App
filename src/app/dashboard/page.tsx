@@ -1,15 +1,18 @@
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import SignOutButton from "@/components/common/SignOutButton";
-import { getAllTodos } from "@/lib/fetchData";
+import { getAllTodos } from "@/lib/fetch-data/fetch-todo";
 import { auth } from "../../../auth";
+import Form from "./Form";
 
 const Dashboard = async () => {
 	const session = await auth();
 	if (!session || !session.user || !session.user.id) {
 		redirect("/");
 	}
+
 	const allTodos = await getAllTodos(session.user.id);
+
 	return (
 		<div>
 			<div>
@@ -24,6 +27,9 @@ const Dashboard = async () => {
 					/>
 				) : null}
 			</div>
+			<hr />
+			<SignOutButton />
+			<hr />
 			<div>
 				<h1>Todos</h1>
 				{allTodos.length > 0 ? (
@@ -36,7 +42,10 @@ const Dashboard = async () => {
 					<p>No todos found</p>
 				)}
 			</div>
-			<SignOutButton />
+			<hr />
+			<div>
+				<Form />
+			</div>
 		</div>
 	);
 };
