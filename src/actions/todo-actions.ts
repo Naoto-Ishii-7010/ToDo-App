@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import z from "zod";
-import { getUserId } from "@/lib/fetch-data/fetch-todo";
+import { getUserId } from "@/lib/fetch-data/fetch-user";
 import { createTodoSchema } from "@/lib/schema/todo-schema";
 import type { createTodoActionState } from "@/types/action-state";
 import { prisma } from "../../prisma";
